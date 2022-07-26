@@ -10,8 +10,21 @@
     width: 100%;
     height: 100%;
     .butterflies-link {
-      stroke: @butterfly-line-color;
+      stroke: #b3b3b3;
+      // stroke: @butterfly-line-color;
       stroke-width: 1px;
+    }
+    .butterflies-link:hover {
+      stroke: #619bcc;
+      stroke-width: 3px;
+      stroke-opacity: 0.7;
+    }
+    .butterflies-link-event-handler{
+      stroke-width: 5px;
+    }
+    .butterflies-link-event-handler:hover{
+      stroke: #619bcc;
+      stroke-width: 3px;
     }
     .butterfly-wrapper {
       .relational-book-base-node {
@@ -19,19 +32,22 @@
         position: absolute;
         height: 32px;
         line-height: 28px;
-        text-align: center;
+        // text-align: center;
         vertical-align: middle;
         border-radius: 5px;
-        color: @butterfly-normal-font-color;
+        color: #999;
+        // filter: blur(0.01em);
+        // color: @butterfly-normal-font-color;
         box-shadow: @butterfly-box-shadow;
         .title {
           line-height: 32px;
           height: 32px;
           width: 100%;
           display: flex;
+          font-weight: bold;
           justify-content: space-between;
-          background: @butterfly-primary-color;
-          border-radius: 15px 15px 0px 0px;
+          background: #316896;
+          // border-radius: 15px 15px 0px 0px;
           padding: 0 8px;
           color:@butterfly-overlay-font-color;
           .remove {
@@ -44,20 +60,27 @@
         .content {
           height: 32px;
           width: 200px;
-          // display: flex;
+          display: flex;
           justify-content: space-between;
           align-items: center;
           padding: 0 8px;
-          background: @butterfly-theme-color;
-          border: @butterfly-box-border;
+          background: #f2f2f2;
+          // background: @butterfly-theme-color;
+          // border: @butterfly-box-border;
           position: relative;
           cursor: pointer;
           .targetEndPoint{
             left: -3px;
+            width: 0px;
+            height: 0px;
+            border: 0px solid #999;
             position: absolute;
           }
           .sourceEndPoint{
             right: -3px;
+            width: 0px;
+            height: 0px;
+            border: 0px solid #999;
             position: absolute;
           }
           .remove {
@@ -73,18 +96,20 @@
             }
           }
           .edit {
-            display: none;
+            display: contents;
             cursor: pointer;
+            color: #9d9d9d;
           }
         }
         .content:last-child {
-          border-radius: 0px 0px 15px 15px;
+          // border-radius: 0px 0px 15px 15px;
         }
         .content:hover {
           display: flex;
-          background: @butterfly-box-move-background-color;
+          background: #deecf3;
+          // background: @butterfly-box-move-background-color;
           .remove {
-            display : contents;
+            // display : contents;
             cursor: pointer;
           }
           .edit {

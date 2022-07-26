@@ -23,10 +23,14 @@ class RelationalBook extends Component {
       moveable: true,    // 可平移
       theme: {
         edge: {
-          shapeType: 'AdvancedBezier',
+          shapeType: 'Manhattan',
+          hasRadius: true,
+          isExpandWidth: true,//增加线条交互区域
+          defaultAnimate: false,//默认开启线条动画
         },
       }
     });
+    window.canvas = this.canvas;
     this.canvas.setMinimap(true);
     this.canvas.draw(mockData, () => {
       this.canvas.focusCenterWithAnimate();

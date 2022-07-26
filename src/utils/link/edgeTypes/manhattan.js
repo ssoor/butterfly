@@ -62,10 +62,15 @@ const getDrawPoint = (start, control, end, radius) => {
 function getRadiusPath(pointArr) {
   let path = ""
   let radius = DEFAULT_RADIUS;
-  const [start, c1, c2] = pointArr;
-  const end = pointArr[pointArr.length - 1]
-  if (Math.abs(start.y - end.y) < 2 * DEFAULT_RADIUS) {
-    radius = Math.abs(start.y - end.y) / 2;
+  const end = pointArr[pointArr.length - 1];
+  
+  for (let i = 1; i < pointArr.length; i++) {
+    const curr = pointArr[i];
+    const prev = pointArr[i - 1];
+
+    const length = Math.max(Math.abs(prev.x - curr.x), Math.abs(prev.y - curr.y));
+
+    radius = Math.min(radius, length / 2);
   }
 
   if (
@@ -128,10 +133,7 @@ function drawManhattan(sourcePoint, targetPoint, options) {
 
   // 不需要计算，直接使用传入的拐点画线
   if (options.draggable && options.hasDragged) {
-    return {
-      path: _drawPath(options.breakPoints),
-      breakPoints: options.breakPoints
-    }
+    return _drawPath(options)
   }
 
   if (!sourcePoint.orientation) {
@@ -186,5 +188,26 @@ function drawManhattan(sourcePoint, targetPoint, options) {
   }
 }
 
+function  _drawPath(options) {
+  const pointArr = options.breakPoints;
+
+  if (options.hasRadius) {
+    if (pointArr.length < 3) {
+      return {
+        path: getDefaultPath(pointArr),
+        breakPoints: pointArr
+      };
+    }
+
+    return getRadiusPath(pointArr)
+  }
+  else {
+    return {
+      path: getDefaultPath(pointArr),
+      breakPoints: pointArr
+    };
+  }
+
+}
 
 export default drawManhattan;

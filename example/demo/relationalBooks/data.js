@@ -13,6 +13,10 @@ export default {
           {id: '1', content: 'id', sourceNodeId: '2', targetNodeId: '3'},
           {id: '4', content: 'isbn', sourceNodeId: '5', targetNodeId: '6'},
           {id: '7', content: 'title', sourceNodeId: '8', targetNodeId: '9'},
+          {id: '7', content: 'title', sourceNodeId: '8', targetNodeId: '9'},
+          {id: '7', content: 'title', sourceNodeId: '8', targetNodeId: '9'},
+          {id: '7', content: 'title', sourceNodeId: '8', targetNodeId: '9'},
+          {id: '7', content: 'title', sourceNodeId: '8', targetNodeId: '9'},
         ],
       },
 
@@ -112,6 +116,7 @@ export default {
       target: '12',
       sourceNode: '0',
       targetNode: '1',
+      draggable:true,
       type: 'endpoint',
     },
     {
@@ -119,6 +124,7 @@ export default {
       target: '18',
       sourceNode: '1',
       targetNode: '2',
+      draggable:true,
       type: 'endpoint',
     },
     {
@@ -126,6 +132,7 @@ export default {
       target: '9',
       sourceNode: '3',
       targetNode: '0',
+      draggable:true,
       type: 'endpoint',
     },
     {
@@ -133,6 +140,7 @@ export default {
       target: '18',
       sourceNode: '3',
       targetNode: '2',
+      draggable:true,
       type: 'endpoint',
     },
   ],

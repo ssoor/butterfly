@@ -19,7 +19,7 @@
     "@stackblitz/sdk": "^1.5.2",
     "antd": "~3.26.7",
     "axios": "^0.21.1",
-    "butterfly-dag": "*",
+    "butterfly-dag": "file:../",
     "butterfly-react": "^0.0.6",
     "download.js": "^1.0.0",
     "i18next": "^19.8.7",

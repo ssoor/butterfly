@@ -49,7 +49,7 @@ class BaseNode extends Node {
         <div class="targetEndPoint butterflie-circle-endpoint" id="${targetNodeId}"></div>
         <span class="remove"><i class="iconfont">&#xe654;</i></span>
         <span class="text">${content}</span>
-        <span class="edit"><i class="iconfont">&#xe66d;</i></span>
+        <span class="edit">${content}</span>
         <div class="sourceEndPoint butterflie-circle-endpoint" id="${sourceNodeId}"></div>
       </div>`);
     });
@@ -65,11 +65,14 @@ class BaseNode extends Node {
       this.addEndpoint({
         id: sourceNodeId,
         type: 'source',
+        orientation:[1,0],
+        draggable:true,
         dom: document.getElementById(sourceNodeId)
       });
       this.addEndpoint({
         id: targetNodeId,
         type: 'target',
+        orientation:[-1,0],
         dom: document.getElementById(targetNodeId)
       });
     }));

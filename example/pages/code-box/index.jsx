@@ -80,14 +80,14 @@ const CodeBox = (props) => {
           )
         }
       >
-        <Editor
+        {/* <Editor
           demo={demo}
           codes={files}
           onCodeChange={codes => {
             setFiles([...codes]);
           }}
           onFold={onEditorFold}
-        />
+        /> */}
         {
           isEditorFold && (
             <div
